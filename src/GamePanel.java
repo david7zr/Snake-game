@@ -67,6 +67,9 @@ public class GamePanel extends JPanel implements ActionListener{
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 } else {
                     g.setColor(new Color(255, 192, 203));
+                    /*This line of code makes every square from tail a random color with every move.
+                    g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+                    */
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
@@ -125,19 +128,19 @@ public class GamePanel extends JPanel implements ActionListener{
                 running = false;
             }
         }
-        //Check if head touches left boreder
+        //Check if head touches left border
         if(x[0]<0){
             running = false;
         }
-        //Check if head touches right boreder
+        //Check if head touches right border
         if(x[0]>SCREEN_WIDTH){
             running = false;
         }
-        //Check if head touches top boreder
+        //Check if head touches top border
         if(y[0]<0){
             running = false;
         }
-        //Check if head touches bottom boreder
+        //Check if head touches bottom border
         if(y[0]>SCREEN_HEIGHT){
             running = false;
         }
@@ -146,16 +149,16 @@ public class GamePanel extends JPanel implements ActionListener{
         }
     }
     public void gameOver(Graphics g){
-        //We are gonna show the score at the game over screen
+        //We are going to show the score at the game over screen
         g.setColor(Color.PINK);
-        g.setFont(new Font("Calibri", Font.BOLD, 35));
+        g.setFont(new Font("papyrus", Font.BOLD, 35));
         FontMetrics metricsend = getFontMetrics(g.getFont());
         g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metricsend.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
 
         //Game over text when you lost
         g.setColor(Color.PINK);
         //This is the font for the text
-        g.setFont(new Font("Calibri", Font.BOLD, 50));
+        g.setFont(new Font("papyrus", Font.BOLD, 50));
         //Font metrics with Graphic g
         FontMetrics metrics = getFontMetrics(g.getFont());
         //This is gonna put it in the center of the screen
