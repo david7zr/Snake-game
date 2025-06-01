@@ -6,4 +6,5 @@ Every square from the tail becomes a random color every time it moves.
 This needs to be activate by deleting the comment "/* */" from the line
 code number 70 in the src/GamePanel.java
 
-Game will be updated with a border over the screen.
+Game will be updated with a border over the screen,
+and will be developed on Pythin this week.
